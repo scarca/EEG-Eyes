@@ -9,4 +9,4 @@ To that extent, I found a [2013 paper](http://suendermann.com/su/pdf/aihls2013.p
 Although neural networks are by-and-large black boxes, I hypothesize the success is due to my using Softplus as an activation function, which I believe better mimics brain function than a sigmoid or tanh. 
 
 I used the following network structure: 
-![Network Structure](./icon.png?raw=true "Network Structure") 
+![Network Structure](https://raw.githubusercontent.com/scarca/EEG-Eyes/master/icon.png?raw=true "Network Structure") 
