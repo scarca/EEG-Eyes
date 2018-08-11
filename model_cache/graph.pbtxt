@@ -176,6 +176,9 @@ node {
       list {
         type: DT_INT64
         type: DT_INT64
+        type: DT_INT64
+        type: DT_INT64
+        type: DT_INT64
         type: DT_DOUBLE
       }
     }
@@ -209,6 +212,21 @@ node {
     value {
       list {
         shape {
+        }
+        shape {
+          dim {
+            size: 1
+          }
+        }
+        shape {
+          dim {
+            size: 1
+          }
+        }
+        shape {
+          dim {
+            size: 1
+          }
         }
         shape {
           dim {
@@ -303,6 +321,90 @@ node {
   attr {
     key: "dtype"
     value {
+      type: DT_INT64
+    }
+  }
+  attr {
+    key: "shape"
+    value {
+      shape {
+      }
+    }
+  }
+}
+node {
+  name: "enqueue_input/Placeholder_3"
+  op: "Placeholder"
+  device: "/device:CPU:0"
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          unknown_rank: true
+        }
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_INT64
+    }
+  }
+  attr {
+    key: "shape"
+    value {
+      shape {
+      }
+    }
+  }
+}
+node {
+  name: "enqueue_input/Placeholder_4"
+  op: "Placeholder"
+  device: "/device:CPU:0"
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          unknown_rank: true
+        }
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_INT64
+    }
+  }
+  attr {
+    key: "shape"
+    value {
+      shape {
+      }
+    }
+  }
+}
+node {
+  name: "enqueue_input/Placeholder_5"
+  op: "Placeholder"
+  device: "/device:CPU:0"
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          unknown_rank: true
+        }
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
       type: DT_DOUBLE
     }
   }
@@ -321,11 +423,17 @@ node {
   input: "enqueue_input/Placeholder"
   input: "enqueue_input/Placeholder_1"
   input: "enqueue_input/Placeholder_2"
+  input: "enqueue_input/Placeholder_3"
+  input: "enqueue_input/Placeholder_4"
+  input: "enqueue_input/Placeholder_5"
   device: "/device:CPU:0"
   attr {
     key: "Tcomponents"
     value {
       list {
+        type: DT_INT64
+        type: DT_INT64
+        type: DT_INT64
         type: DT_INT64
         type: DT_INT64
         type: DT_DOUBLE
@@ -676,6 +784,30 @@ node {
             size: 50
           }
           dim {
+            size: 1
+          }
+        }
+        shape {
+          dim {
+            size: 50
+          }
+          dim {
+            size: 1
+          }
+        }
+        shape {
+          dim {
+            size: 50
+          }
+          dim {
+            size: 1
+          }
+        }
+        shape {
+          dim {
+            size: 50
+          }
+          dim {
             size: 14
           }
         }
@@ -686,6 +818,9 @@ node {
     key: "component_types"
     value {
       list {
+        type: DT_INT64
+        type: DT_INT64
+        type: DT_INT64
         type: DT_INT64
         type: DT_INT64
         type: DT_DOUBLE
@@ -867,7 +1002,7 @@ node {
   attr {
     key: "seed2"
     value {
-      i: 26
+      i: 29
     }
   }
 }
@@ -1283,7 +1418,7 @@ node {
 node {
   name: "Input_Activation/MatMul"
   op: "MatMul"
-  input: "random_shuffle_queue_DequeueMany:2"
+  input: "random_shuffle_queue_DequeueMany:5"
   input: "Input_Activation/kernel/read"
   attr {
     key: "T"
@@ -1546,7 +1681,7 @@ node {
   attr {
     key: "seed2"
     value {
-      i: 43
+      i: 46
     }
   }
 }
@@ -2223,7 +2358,7 @@ node {
   attr {
     key: "seed2"
     value {
-      i: 61
+      i: 64
     }
   }
 }
@@ -2577,7 +2712,7 @@ node {
   attr {
     key: "seed2"
     value {
-      i: 72
+      i: 75
     }
   }
 }
@@ -3256,7 +3391,7 @@ node {
   attr {
     key: "seed2"
     value {
-      i: 89
+      i: 92
     }
   }
 }
@@ -3935,7 +4070,7 @@ node {
   attr {
     key: "seed2"
     value {
-      i: 106
+      i: 109
     }
   }
 }
@@ -4535,7 +4670,7 @@ node {
 node {
   name: "sparse_softmax_cross_entropy_loss/remove_squeezable_dimensions/Squeeze"
   op: "Squeeze"
-  input: "random_shuffle_queue_DequeueMany:1"
+  input: "random_shuffle_queue_DequeueMany:4"
   attr {
     key: "T"
     value {
@@ -9377,7 +9512,7 @@ node {
 node {
   name: "gradients/Input_Activation/MatMul_grad/MatMul_1"
   op: "MatMul"
-  input: "random_shuffle_queue_DequeueMany:2"
+  input: "random_shuffle_queue_DequeueMany:5"
   input: "gradients/Input_Activation/BiasAdd_grad/tuple/control_dependency"
   attr {
     key: "T"
@@ -12930,7 +13065,7 @@ node {
         dtype: DT_STRING
         tensor_shape {
         }
-        string_val: "_temp_a429134d2f0c4cc6b242b695c0d3b471/part"
+        string_val: "_temp_ea19c4726632405ba8392d6f02da6d85/part"
       }
     }
   }
